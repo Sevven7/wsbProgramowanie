@@ -1,0 +1,278 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+/*  //Zadanie 1
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b, c, s;
+
+        a = inputValue();
+        b = inputValue();
+        c = inputValue();
+        s = (a + b + c) / 3;
+        Console.WriteLine(s);
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+} 
+*/
+/*
+  //Zadanie 2
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double p, o, r;
+
+        p = inputValue();
+        r = Math.Sqrt(p / 3.1415);
+        o = 2 * 3.1415 * r;
+        Console.WriteLine(o);
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 3
+using System;
+
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double w, h, bmi;
+
+        w = inputValue();
+        h = inputValue();
+        bmi = w / (h * h);
+        Console.WriteLine(bmi);
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 4
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b, c, d, x;
+
+        a = inputValue();
+        b = inputValue();
+        c = inputValue();
+        d = inputValue();
+        if ((b == Math.Pow(0, d)) == 0)
+        {
+            Console.WriteLine("Brak rozwiązań");
+        }
+        else
+        {
+            x = a / b + c / d;
+            Console.WriteLine(x);
+        }
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 5
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b;
+
+        a = inputValue();
+        b = inputValue();
+        if (a == b)
+        {
+            Console.WriteLine("Liczby są takie same");
+        }
+        else
+        {
+            if (a > b)
+            {
+                Console.WriteLine(a);
+            }
+            else
+            {
+                Console.WriteLine(b);
+            }
+        }
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 6
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b, c;
+
+        a = inputValue();
+        b = inputValue();
+        c = inputValue();
+        if (a == b)
+        {
+            if (b == c)
+            {
+                Console.WriteLine("Trójkąt jest równoboczny");
+            }
+            else
+            {
+                Console.WriteLine("Trójkąt nie jest równoboczny");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Trójkąt nie jest równoboczny");
+        }
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 7
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double x, y, r, odlegloscOdSrodka;
+
+        Console.WriteLine("Podaj x");
+        x = inputValue();
+        Console.WriteLine("Podaj y");
+        y = inputValue();
+        Console.WriteLine("Podaj r");
+        r = inputValue();
+        if (x * x + y * y <= r * r)
+        {
+            Console.WriteLine("Wpisane współrzędne znajdują się w obrębie koła");
+        }
+        else
+        {
+            Console.WriteLine("Wpisane współrzędne NIE znajdują się w obrębie koła");
+        }
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
+/*  // Zadanie 8
+public class MyProgram
+{
+    public static void Main(string[] args)
+    {
+        double a, b, q, wynik;
+
+        a = inputValue();
+        b = inputValue();
+        q = inputValue();
+        if (q == 1)
+        {
+            wynik = a + b;
+            Console.WriteLine(wynik);
+        }
+        else
+        {
+            if (q == 2)
+            {
+                wynik = a - b;
+                Console.WriteLine(wynik);
+            }
+            else
+            {
+                if (q == 3)
+                {
+                    wynik = a * b;
+                    Console.WriteLine(wynik);
+                }
+                else
+                {
+                    if (q == 4)
+                    {
+                        if (b == 0)
+                        {
+                            Console.WriteLine(a + "/" + b);
+                        }
+                        else
+                        {
+                            wynik = a / b;
+                            Console.WriteLine(wynik);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Błędny operator");
+                    }
+                }
+            }
+        }
+    }
+
+    // .NET can only read single characters or entire lines from the
+    // console. The following function safely reads a double value.
+    private static double inputValue()
+    {
+        double result;
+        while (!double.TryParse(Console.ReadLine(), out result)) ;
+        return result;
+    }
+}
+*/
