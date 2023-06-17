@@ -1,0 +1,236 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekcja1706
+{
+    // ZADANIE 1
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            int[] tablica = GenerujTablice(10); // Wywołanie funkcji GenerujTablice() tworzy tablicę o 10 losowych wartościach
+
+            Console.WriteLine("Zawartość tablicy od tyłu:");
+
+            for (int i = tablica.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(tablica[i]);
+            }
+        }
+
+        static int[] GenerujTablice(int rozmiar)
+        {
+            Random random = new Random();
+            int[] tablica = new int[rozmiar];
+
+            for (int i = 0; i < rozmiar; i++)
+            {
+                tablica[i] = random.Next(100); // Losowa wartość z zakresu 0-99
+            }
+            return tablica;
+        }
+    }
+} */
+    // ZADANIE 2
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            int[] tablica = GenerujTablice(10); // Wywołanie funkcji GenerujTablice() tworzy tablicę o 10 losowych wartościach
+
+            Console.WriteLine("Zawartość tablicy od tyłu:");
+
+            for (int i = tablica.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(tablica[i]);
+            }
+
+            int najmniejszy = tablica[0];
+            int najwiekszy = tablica[0];
+
+            for (int i = 1; i < tablica.Length; i++)
+            {
+                if (tablica[i] < najmniejszy)
+                {
+                    najmniejszy = tablica[i];
+                }
+
+                if (tablica[i] > najwiekszy)
+                {
+                    najwiekszy = tablica[i];
+                }
+            }
+
+            Console.WriteLine("Najmniejszy element: " + najmniejszy);
+            Console.WriteLine("Największy element: " + najwiekszy);
+        }
+
+        static int[] GenerujTablice(int rozmiar)
+        {
+            Random random = new Random();
+            int[] tablica = new int[rozmiar];
+
+            for (int i = 0; i < rozmiar; i++)
+            {
+                tablica[i] = random.Next(100); // Losowa wartość z zakresu 0-99
+            }
+
+            return tablica;
+        }
+    }
+} */
+    // ZADANIE 3
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            int[] tablica = { 5, 2, 8, 1, 3 }; // Tablica wejściowa
+
+            Console.WriteLine("Tablica przed sortowaniem:");
+            WypiszTablice(tablica);
+
+            SortowanieBabelkowe(tablica);
+
+            Console.WriteLine("Tablica po sortowaniu:");
+            WypiszTablice(tablica);
+        }
+
+        static void SortowanieBabelkowe(int[] tablica)
+        {
+            int n = tablica.Length;
+            bool zamiana;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                zamiana = false;
+
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (tablica[j] > tablica[j + 1])
+                    {
+                        // Zamiana miejscami
+                        int temp = tablica[j];
+                        tablica[j] = tablica[j + 1];
+                        tablica[j + 1] = temp;
+
+                        zamiana = true;
+                    }
+                }
+                if (!zamiana)
+                    break;
+            }
+        }
+
+        static void WypiszTablice(int[] tablica)
+        {
+            for (int i = 0; i < tablica.Length; i++)
+            {
+                Console.Write(tablica[i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+} */
+    // ZADANIE 4
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            int[] tablica = { 5, 2, 8, 1, 3 }; // Tablica wejściowa
+
+            Console.WriteLine("Tablica przed sortowaniem:");
+            WypiszTablice(tablica);
+
+            SortowaniePrzezWstawianie(tablica);
+
+            Console.WriteLine("Tablica po sortowaniu:");
+            WypiszTablice(tablica);
+        }
+
+        static void SortowaniePrzezWstawianie(int[] tablica)
+        {
+            int n = tablica.Length;
+
+            for (int i = 1; i < n; i++)
+            {
+                int klucz = tablica[i];
+                int j = i - 1;
+
+                while (j >= 0 && tablica[j] > klucz)
+                {
+                    tablica[j + 1] = tablica[j];
+                    j--;
+                }
+
+                tablica[j + 1] = klucz;
+            }
+        }
+
+        static void WypiszTablice(int[] tablica)
+        {
+            for (int i = 0; i < tablica.Length; i++)
+            {
+                Console.Write(tablica[i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+} */
+    // ZADANIE 5
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            int[] tablica = { 5, 2, 8, 1, 3 }; // Tablica wejściowa
+
+            Console.WriteLine("Tablica przed sortowaniem:");
+            WypiszTablice(tablica);
+
+            SortowaniePrzezWybieranie(tablica);
+
+            Console.WriteLine("Tablica po sortowaniu:");
+            WypiszTablice(tablica);
+        }
+
+        static void SortowaniePrzezWybieranie(int[] tablica)
+        {
+            int n = tablica.Length;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                int indeksMinimum = i;
+
+                // Znajdowanie indeksu najmniejszego elementu w nieposortowanej części tablicy
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (tablica[j] < tablica[indeksMinimum])
+                    {
+                        indeksMinimum = j;
+                    }
+                }
+
+                // Zamiana miejscami najmniejszego elementu z pierwszym elementem nieposortowanej części
+                int temp = tablica[i];
+                tablica[i] = tablica[indeksMinimum];
+                tablica[indeksMinimum] = temp;
+            }
+        }
+
+        static void WypiszTablice(int[] tablica)
+        {
+            for (int i = 0; i < tablica.Length; i++)
+            {
+                Console.Write(tablica[i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+} */
