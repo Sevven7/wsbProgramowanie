@@ -1,0 +1,156 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekcja17062
+{
+    // ZADANIE 1
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Podaj liczbę liczb pierwszych do wygenerowania:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Wygenerowane liczby pierwsze:");
+
+            int liczba = 2; // Startujemy od pierwszej liczby pierwszej
+            int licznik = 0; // Licznik wygenerowanych liczb pierwszych
+
+            while (licznik < n)
+            {
+                if (CzyLiczbaPierwsza(liczba))
+                {
+                    Console.WriteLine(liczba);
+                    licznik++;
+                }
+
+                liczba++;
+            }
+        }
+
+        static bool CzyLiczbaPierwsza(int liczba)
+        {
+            if (liczba < 2)
+                return false;
+
+            for (int i = 2; i <= Math.Sqrt(liczba); i++)
+            {
+                if (liczba % i == 0)
+                    return false;
+            }
+
+            return true;
+        }
+    }
+    */
+    // ZADANIE 2
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Podaj liczbę liczb parzystych do wygenerowania:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Wersja 1 - Losowanie z poprawnością po losowaniu:");
+            int[] wylosowaneLiczby1 = LosujLiczbyWersja1(n);
+            WypiszLiczby(wylosowaneLiczby1);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Wersja 2 - Losowanie od razu parzystej liczby:");
+            int[] wylosowaneLiczby2 = LosujLiczbyWersja2(n);
+            WypiszLiczby(wylosowaneLiczby2);
+        }
+
+        static int[] LosujLiczbyWersja1(int n)
+        {
+            Random random = new Random();
+            int[] wylosowaneLiczby = new int[n];
+            int iloscLosowan = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                int liczba;
+
+                do
+                {
+                    liczba = random.Next(-8, 9);
+                    iloscLosowan++;
+                } while (liczba % 2 != 0);
+
+                wylosowaneLiczby[i] = liczba;
+            }
+
+            Console.WriteLine("Ilość losowań (wersja 1): " + iloscLosowan);
+
+            return wylosowaneLiczby;
+        }
+
+        static int[] LosujLiczbyWersja2(int n)
+        {
+            Random random = new Random();
+            int[] wylosowaneLiczby = new int[n];
+            int iloscLosowan = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                int liczba = random.Next(-4, 5) * 2;
+                iloscLosowan++;
+                wylosowaneLiczby[i] = liczba;
+            }
+
+            Console.WriteLine("Ilość losowań (wersja 2): " + iloscLosowan);
+
+            return wylosowaneLiczby;
+        }
+
+        static void WypiszLiczby(int[] liczby)
+        {
+            for (int i = 0; i < liczby.Length; i++)
+            {
+                Console.Write(liczby[i]);
+
+                if (i < liczby.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+
+            Console.WriteLine();
+        }
+    }
+    */
+    // ZADANIE 3
+    /*
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Podaj wysokość trójkąta:");
+            int wysokosc = Convert.ToInt32(Console.ReadLine());
+
+            RysujTrojkat(wysokosc);
+        }
+
+        static void RysujTrojkat(int wysokosc)
+        {
+            int szerokosc = wysokosc * 2 - 1;
+
+            for (int wiersz = 1; wiersz <= wysokosc; wiersz++)
+            {
+                int iloscZnakow = wiersz * 2 - 1;
+                int iloscSpacji = (szerokosc - iloscZnakow) / 2;
+
+                string spacje = new string(' ', iloscSpacji);
+                string znaki = new string('+', iloscZnakow);
+
+                Console.WriteLine(spacje + znaki);
+            }
+        }
+    } */
+}
